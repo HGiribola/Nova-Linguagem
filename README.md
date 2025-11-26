@@ -129,6 +129,6 @@ if (x == 0) {
 Saída: `999`
 
 
-## Testes e execução interativa
-- Recomenda-se criar pequenos arquivos .src/.txt com programas de teste.
+## Recomendações:
+- Recomenda se criar pequenos arquivos .src/.txt com programas de teste.
 - Para entrada interativa, o Interpreter deve ler de stdin; ao rodar no terminal, digite valores quando solicitado.

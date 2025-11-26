@@ -1,9 +1,9 @@
-# Mini Compilador — Nova Linguagem
+# Compilador — Nova Linguagem
 
-Projeto acadêmico: mini compilador para uma linguagem imperativa simplificada (variáveis inteiras, input/print, expressões aritméticas, if/else, while).
+Projeto acadêmico: mini compilador para uma linguagem 'simplificada'.
 
-## Estrutura do projeto
-(Arquivos presentes no workspace — adapte se renomeou pastas)
+## Estrutura:
+
 - package/CodeGenerator.java
 - package/Expr.java
 - package/Instruction.java
@@ -17,17 +17,7 @@ Projeto acadêmico: mini compilador para uma linguagem imperativa simplificada (
 - package/Token.java
 - package/TokenType.java
 
-> Observação importante: evite usar uma pasta chamada `package` — `package` é palavra reservada em Java. Veja seção "Compilar" para correções.
-
-## Objetivo do README
-- Explicar como compilar/rodar no Windows
-- Descrever sintaxe básica da mini-linguagem
-- Listar tokens principais e opcodes usados pela máquina virtual
-- Exemplos de uso e erros comuns
-
----
-
-## Como compilar e executar (Windows — cmd ou PowerShell)
+## Como utilizar (windows)
 
 Situação A — código sem declaração de pacote (arquivos na raiz do src):
 1. Abra o terminal no diretório:
@@ -57,11 +47,7 @@ Situação B — código em pacote válido (recomendado: renomear pasta `package
    java -cp out mylang.Main
    ```
 
-Se preferir, posso gerar automaticamente as declarações `package mylang;` para todos os arquivos.
-
----
-
-## Sintaxe resumida da linguagem
+## Sintaxe
 
 - Declaração de variável:
   ```
@@ -99,25 +85,7 @@ Operadores aritméticos e comparativos comuns: `+ - * / == != < <= > >=`
 - Comentários: (ver Lexer) — se não implementado, evitar comentários inline.
 
 ---
-
-## Máquina virtual — instruções principais (exemplo)
-A implementação real pode variar; aqui estão opcodes típicos usados no projeto:
-- PUSH <valor>      — empilha número literal
-- LOAD <var>        — empilha valor da variável
-- STORE <var>       — desempilha e armazena em variável
-- ADD, SUB, MUL, DIV — operações aritméticas (top2)
-- PRINT             — imprime topo da pilha
-- INPUT <var>       — lê inteiro do usuário e armazena em var
-- JUMP <addr>       — salto incondicional
-- JZ <addr>         — salto se topo == 0
-- JNZ <addr>        — salto se topo != 0
-- HALT              — finaliza execução
-
-Exemplo de geração: `i = i + 1;` → LOAD i, PUSH 1, ADD, STORE i
-
----
-
-## Exemplos
+## Exemplo - utilizar em sala
 
 Entrada e Saída
 ```
@@ -160,32 +128,7 @@ if (x == 0) {
 ```
 Saída: `999`
 
----
-
-## Erros comuns e como resolver
-- Pasta chamada `package`: renomeie para `mylang` ou outro nome válido e adicione `package mylang;` nos arquivos Java.
-- Caminho de classes x declaração de pacote: garantIR que estrutura de pastas reflita declarações `package`.
-- Erro semântico: uso de variável não declarada — verifique declarações antes do uso (SemanticAnalyzer).
-- Exceções em tempo de execução na VM: revisar ordem de geração de instruções e manipulação de pilha.
-
----
 
 ## Testes e execução interativa
 - Recomenda-se criar pequenos arquivos .src/.txt com programas de teste.
 - Para entrada interativa, o Interpreter deve ler de stdin; ao rodar no terminal, digite valores quando solicitado.
-
----
-
-## Próximos passos sugeridos
-- Gerar automaticamente cabeçalhos `package mylang;` e mover arquivos para `mylang/`.
-- Gerar Javadoc a partir do código.
-- Documentar a gramática formal (BNF) e precedência de operadores.
-- Adicionar testes unitários JUnit para Lexer, Parser, SemanticAnalyzer e Interpreter.
-
----
-
-Se quiser, eu:
-- gero e salvo este README.md no caminho acima agora, e/ou
-- insiro automaticamente `package mylang;` em todos os .java e renomeio a pasta `package` → `mylang`.
-
-Responda: "Salvar README" ou "Salvar + adicionar package" (ou apenas diga qual opção prefere).

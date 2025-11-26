@@ -1,3 +1,4 @@
+package LangFiles;
 public enum OpCode {
     PUSH_CONST,
     LOAD_VAR,

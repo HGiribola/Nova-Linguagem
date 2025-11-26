@@ -1,3 +1,4 @@
+package LangFiles;
 public class Instruction {
     public final OpCode op;
     public final String strOperand; // para variáveis

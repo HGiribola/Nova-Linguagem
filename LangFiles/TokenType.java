@@ -1,3 +1,4 @@
+package LangFiles;
 public enum TokenType {
     // Palavras-chave
     INT, REAL, IF, ELSE, WHILE, PRINT, INPUT,
